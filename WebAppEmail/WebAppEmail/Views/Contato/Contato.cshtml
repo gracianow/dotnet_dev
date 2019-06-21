@@ -1,0 +1,50 @@
+﻿@model WebAppEmail.Models.Contato
+@{
+    ViewBag.Title = "Contato";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h4>Contate-nos.</h4>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nome, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Nome)<br />
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email)<br />
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Assunto, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Assunto, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Assunto)<br />
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Mensagem, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.Mensagem, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Mensagem)<br />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Enviar" />
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+
